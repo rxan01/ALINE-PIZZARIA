@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/telaP.css">
+    <title>Tela de Pagamento</title>
+    <link rel="stylesheet" href="/fontawesome-free-6.6.0-web/fontawesome-free-6.6.0-web/css/all.min.css">
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <h2 class="title">Pagamento</h2>
+            <p>Escolha sua forma de pagamento preferida</p>
+        </div>
+        <div class="card-content">
+            <div class="radio-group">
+                <div>
+                    <input type="radio" name="metodoPagamento" id="credito" value="credito" checked>
+                    <label for="credito">Crédito<i class="fa-regular fa-credit-card"></i></label>
+                </div>
+                <div>
+                    <input type="radio" name="metodoPagamento" id="debito" value="debito">
+                    <label for="debito">Débito<i class="fa-regular fa-credit-card"></i></label>
+                </div>
+                <div>
+                    <input type="radio" name="metodoPagamento" id="dinheiro" value="dinheiro">
+                    <label for="dinheiro">Dinheiro<i class="fa-solid fa-money-bill"></i></label>
+                </div>
+                <div>
+                    <input type="radio" name="metodoPagamento" id="vale" value="vale">
+                    <label for="vale">Vale Refeição<i class="fa-solid fa-credit-card"></i></label>
+                </div>
+            </div>
+
+            <div id="creditDebitFields" class="payment-fields">
+                <label for="numero-cartao">Número do Cartão</label>
+                <input id="numero-cartao" placeholder="1234 5678 9012 3456" type="text">
+                <div class="grid">
+                    <div>
+                        <label for="validade">Validade</label>
+                        <input id="validade" placeholder="MM/AA" type="text">
+                    </div>
+                    <div>
+                        <label for="cvv">CVV</label>
+                        <input id="cvv" placeholder="123" type="text">
+                    </div>
+                </div>
+            </div>
+
+            <div id="dinheiroFields" class="payment-fields hidden">
+                <label for="valor-em-dinheiro">Valor em Dinheiro</label>
+                <input id="valor-em-dinheiro" placeholder="0.00" type="number">
+                <div id="trocoDisplay" class="troco-display hidden"></div>
+            </div>
+
+            <div id="valeFields" class="payment-fields hidden">
+                <label for="tipo-vale">Tipo de Vale Refeição</label>
+                <select id="tipo-vale">
+                    <option value="" disabled selected>Selecione o tipo</option>
+                    <option value="alelo">Alelo</option>
+                    <option value="sodexo">Sodexo</option>
+                    <option value="ticket">Ticket</option>
+                    <option value="vr">VR</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="card-footer">
+            <button id="confirmPayment">Confirmar Pagamento</button>
+            <div class="summary">
+                <h3>Resumo do Pedido</h3>
+                <div class="summary-item">
+                    <span>Taxa de entrega</span>
+                    <span>R$ 00,00</span>
+                </div>
+                <div class="summary-item total">
+                    <span>Total</span>
+                    <span id="totalAmount">R$ 100,00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="jv/telaP.js"></script>
+</body>
+</html>

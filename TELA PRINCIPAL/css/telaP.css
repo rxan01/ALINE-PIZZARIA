@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    color: black;
+    background-color: white;
+}
+
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    box-shadow: 0 0.1rem 0.5rem #ccc;
+    width: 100%;
+    background-color: white;
+    transition: all 0.5;
+    position: fixed;
+    z-index: 10;
+    top: 0; /* Adiciona para fixar no topo */
+}
+
+.btn-primary{
+    padding: 9px 15px;
+    font-size: 14px;
+    background: white;
+    color:  #266C59;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: all 0.5s;
+    border: 1px solid #266C59;
+}
+
+.btn-primary:hover{
+    background: #266C59;
+    color: white;
+    
+}
+
+.menu .bar:nth-child(1),
+.menu .bar:nth-child(3){
+    background-color: #266C59;
+}
+
+.navigation .logo{
+    color: #266C59;
+    font-size: 2rex;
+    font-weight: 600;
+}
+
+.logo span{
+    color: black;
+}
+
+.navigation ul{
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+.navigation ul li a{
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.5s;
+}
+
+.navigation ul li a:hover{
+    color:#266C59;
+}
+
+.navigation i{
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.menu{
+    cursor: pointer;
+    display: none;
+}
+
+.menu .bar{
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+    background: black;
+    margin: 5px auto;
+    transition: all 0.3s;
+}
+
+.menu .bar:nth-child(1),
+.menu .bar:nth-child(3){
+    background: #266C59;
+}
+
+.home{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10%;
+    margin-top: -50px;
+}
+.home-text{
+    max-width: 37rem;
+    margin-top: 170px;
+}
+
+.home-text .text-h4{
+    font-size: 1.9rem;
+    color: black;
+    margin-bottom: 0.1rem;
+}
+
+
+.home-text p{
+    margin-bottom: 1.7rem;
+}
+
+section.slider {
+    position: relative;
+    top: 77px; /* Ajuste este valor para a altura exata do header */
+    width: 100%;
+    height: auto;
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+
+.slider-content{
+    width: 400%;
+    height: auto;
+    display: flex;
+}
+
+.slider-content input, .img-mobile{
+    display: none;
+}
+
+.slide-box{
+    width: 25%;
+    height: auto;
+    position: relative;
+    text-align: center;
+    transition: 1s;
+}
+
+.home {
+    width: 100%;
+    height: 100vh;  /* A altura da tela será ocupada */
+    display: flex;
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: flex-start;  /* Alinha no topo da tela */
+    padding: 0;
+}
+
+.home-text {
+    max-width: 37rem;
+    text-align: center;
+    margin-top: 14%;  /* Adiciona um pequeno espaço no topo para subir um pouco */
+}
+
+.home-text .text-h4 {
+    font-size: 2rem;  /* Aumenta o tamanho do subtítulo */
+    color: #266C59;
+    margin-bottom: 0.5rem;
+}
+
+.home-text .text-h1 {
+    font-size: 4rem;  /* Aumenta o tamanho do título */
+    margin-bottom: 1rem;
+    line-height: 4.5rem;  /* Ajusta o espaçamento entre as linhas */
+}
+
+.home-text p {
+    font-size: 1.3rem;  /* Aumenta o tamanho da fonte do parágrafo */
+    margin-bottom: 2rem;  /* Aumenta o espaço inferior */
+}
+
+.home-btn {
+    padding: 15px 50px;  /* Aumenta o tamanho do botão */
+    font-size: 16px;  /* Aumenta o texto do botão */
+    background: #CEAD4E;
+    color: white;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: all 0.5s;
+}
+
+.home-btn:hover {
+    background: white;
+    color: #CEAD4E;
+    border: 1px solid #CEAD4E;
+}
+
+.slide-box img{
+    width: 100%;
+}
+
+
+#radio1:checked ~ .primeiro{
+    margin-left: 0%;
+}
+
+#radio2:checked ~ .primeiro{
+    margin-left: -25%;
+}
+
+#radio3:checked ~ .primeiro{
+    margin-left: -50%;
+}
+
+
+@media screen and (max-width: 900px) {
+    .img-desktop{
+        display: none;
+    }
+
+    .img-mobile{
+        display: block;
+    }
+
+    .nav-auto, .nav-manual{
+        margin-top: 60%;
+    }
+}
+
+
+@media (max-width:785px) {
+    .navigation{
+        padding: 18px 50px;
+        z-index: 10;
+    }
+
+    .menu{
+        display: block;
+        margin-top: 10px;
+    }
+    .menu.ativo .bar:nth-child(1){
+        transform:  translateY(8px) rotate(45deg);
+    }
+    .menu.ativo .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu.ativo .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu{
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        background: white;
+        gap: -10px;
+        transition: 0.3s;
+        
+    }
+    .nav-menu.ativo{
+        right: 0;
+    }
+    .nav-item{
+        margin: 16px 0;
+    }
+}
