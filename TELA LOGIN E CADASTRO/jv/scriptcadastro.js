@@ -13,6 +13,7 @@ btnCadastrar.addEventListener("click", function cadastrar(event){
             function(resp){
                 console.log(resp);
                 if(resp[0].status != 'error') {
+                    alert('opaaa')
                     window.Location.href='./telaLC.html'
                 }
             })

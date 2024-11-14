@@ -35,6 +35,7 @@ try {
 
         // Resposta de sucesso
         $response['status'] = 'success';
+        $response['total'] = $total;
         $response['pedido_id'] = $pedido_id;
     } else {
         $response['message'] = 'Falha ao inserir o pedido.';

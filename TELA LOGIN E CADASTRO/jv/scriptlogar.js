@@ -12,8 +12,13 @@ var btnEntrar = document.querySelector("#butLogar")
             if(resp[0].status != 'error') {
                 localStorage.setItem('email', resp[0].email)
                 localStorage.setItem('id', resp[0].id)
-                window.location.href = './../TELA PRINCIPAL/telaP.html'
-            }else{
+                if(resp[0].estatus == 'U'){
+                    window.location.href = './../TELA PRINCIPAL/telaP.html'
+                }else{
+                    window.location.href = './../cart2/cart/painel/admin.php'
+                }
+            }
+            else{
                 alert("email ou senha invalido")
             }
         })

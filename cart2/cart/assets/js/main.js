@@ -60,7 +60,6 @@ function removerDoCarrinho(id) {
 // Função para finalizar a compra
 function finalizarCompra() {
     const id = localStorage.getItem('id')
-    localStorage.setItem('total', total)
     $.post('../cart/php/finalizarCompra.php', {
         produtos: carrinho,
         id: id,
@@ -68,7 +67,9 @@ function finalizarCompra() {
     }, function(resp){
         console.log(resp);
         if(resp.status != 'error') {
-            window.location.href = './confirmacao.php'
+            localStorage.setItem('total', resp.total)
+            localStorage.setItem('pedido_id', resp.pedido_id)
+            window.location.href = './../../TELAS/TELA ENDEREÇO/telaE.html'
         }
     });
     

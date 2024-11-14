@@ -8,14 +8,16 @@ $numero = $_POST['numero'];
 $complemento = $_POST['complemento'];
 $bairro = $_POST['bairro'];
 $cep = $_POST['cep'];
+$id = $_POST['id'];
 
 try {
-    $sql = $conn->prepare('INSERT INTO endereco (rua, numero, complemento, bairro, cep) VALUES (:rua, :numero, :complemento, :bairro, :cep)');
+    $sql = $conn->prepare('INSERT INTO endereco (usuario_id, rua, numero, complemento, bairro, cep) VALUES (:usuario_id, :rua, :numero, :complemento, :bairro, :cep)');
     $sql->bindValue(':rua', $rua);
     $sql->bindValue(':numero', $numero);
     $sql->bindValue(':complemento', $complemento);
     $sql->bindValue(':bairro', $bairro);
     $sql->bindValue(':cep', $cep);
+    $sql->bindValue(':usuario_id', $id);
     $sql->execute();
 
     if ($sql->rowCount() > 0) {
