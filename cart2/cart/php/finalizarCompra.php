@@ -6,9 +6,9 @@ session_start();
 $response = ['status' => 'error']; // Inicializa a resposta padrão como erro
 
 // Dados do pedido
-$produtos = $_POST['produtos']; // Deve ser um array de produtos
+$produtos = $_POST['produtos'];
 $total = $_POST['total'];
-$usuario_id = 1;  // ID do usuário logado
+$usuario_id = $_POST['id'];  
 $status_pedido = 'Pendente';
 
 try {

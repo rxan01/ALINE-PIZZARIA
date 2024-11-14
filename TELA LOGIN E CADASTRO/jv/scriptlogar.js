@@ -11,6 +11,7 @@ var btnEntrar = document.querySelector("#butLogar")
             console.log(resp);
             if(resp[0].status != 'error') {
                 localStorage.setItem('email', resp[0].email)
+                localStorage.setItem('id', resp[0].id)
                 window.location.href = './../TELA PRINCIPAL/telaP.html'
             }else{
                 alert("email ou senha invalido")

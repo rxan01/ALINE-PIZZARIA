@@ -59,8 +59,11 @@ function removerDoCarrinho(id) {
 
 // Função para finalizar a compra
 function finalizarCompra() {
+    const id = localStorage.getItem('id')
+    localStorage.setItem('total', total)
     $.post('../cart/php/finalizarCompra.php', {
         produtos: carrinho,
+        id: id,
         total: totalPreco
     }, function(resp){
         console.log(resp);

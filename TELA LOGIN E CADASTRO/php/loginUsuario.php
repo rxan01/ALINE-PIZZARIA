@@ -16,7 +16,8 @@ if($sql->rowCount() > 0){
         $email = $dado['email'];
         $senha = $dado['senha'];
         $nome = $dado['nome'];
-        $json[] = array('nome'=> $nome,'email'=> $email,'senha'=> md5($senha));
+        $id = $dado['id'];
+        $json[] = array('nome'=> $nome,'email'=> $email,'senha'=> md5($senha), 'id' => $id);
     }
     echo json_encode($json, JSON_PRETTY_PRINT);
 }else{

@@ -1,4 +1,5 @@
-const totalPedido = 40.90;
+const totalPedido = localStorage.getItem('total');
+// const totalPedido = 120;
 
 document.querySelectorAll('input[name="metodoPagamento"]').forEach(input => {
     input.addEventListener('change', (event) => {
@@ -21,3 +22,17 @@ document.getElementById('valor-em-dinheiro').addEventListener('input', (event) =
         trocoDisplay.classList.add('hidden');
     }
 });
+
+function puxarTotal() {
+    const row = document.querySelector('#row');
+    if (row) {
+        row.innerHTML = `
+            <span>Total</span>
+            <span id="totalAmount">R$ ${totalPedido}</span>
+        `;
+    } else {
+        console.error("Elemento '.row' não encontrado.");
+    }
+}
+
+puxarTotal();
